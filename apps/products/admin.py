@@ -11,9 +11,9 @@ class ProductResource(resources.ModelResource):
 
 class ProductAdmin(ImportExportModelAdmin):
     resource_class = ProductResource
-    list_display = ['name', 'brand', 'sku', 'price', 'category_name', ]
+    list_display = ['name', 'brand', 'sku', 'price', 'main_category', ]
     search_fields = ["name", 'brand', 'sku', ]
-    list_editable = ['price', 'category_name',]
+    list_editable = ['price', 'main_category',]
 
 
 admin.site.register(Product, ProductAdmin)
