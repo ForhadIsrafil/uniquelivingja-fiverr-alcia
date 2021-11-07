@@ -1,22 +1,26 @@
 from django.db import models
 
+
 class Product(models.Model):
-    CATEGORY_CHOICES = (
-        ('Adhesive Sealants', 'Adhesive Sealants'),
-        ('Locks', 'Locks'),
-        ('Hinges', 'Hinges'),
-        ('Shelf Support', 'Shelf Support'),
-        ('Nails Staples', 'Nails Staples'),
-        ('Screws', 'Screws'),
-        ('Plumbing', 'Plumbing'),
-        ('Tools', 'Tools'),
-        ('Abrasives', 'Abrasives'),
-        ('Fasteners', 'Fasteners'),
-        ('Locks', 'Locks'),
-        ('Cleaning Supplies', 'Cleaning Supplies'),
-        ('Paint', 'Paint'),
+    MAIN_CATEGORY_CHOICES = (
+        ('Bathroom', 'Bathroom'),
+        ('Kitchen', 'Kitchen'),
+        ('Commercial', 'Commercial'),
         ('Hardware', 'Hardware'),
-        ('Misc', 'Misc'),
+    )
+    SUB_CATEGORY_CHOICES = (
+        ('Accessories', 'Accessories'),
+        ('Showers', 'Showers'),
+        ('Basin-Faucets', 'Basin-Faucets'),
+        ('Toilets', 'Toilets'),
+        ('Lighting', 'Lighting'),
+    )
+    SUB_SUB_CATEGORY_CHOICES = (
+        ('Accessories', 'Accessories'),
+        ('Showers', 'Showers'),
+        ('Basin-Faucets', 'Basin-Faucets'),
+        ('Toilets', 'Toilets'),
+        ('Lighting', 'Lighting'),
     )
     brand = models.CharField(max_length=200, null=True)
     name = models.CharField(max_length=200, null=True)
@@ -25,7 +29,12 @@ class Product(models.Model):
     price = models.FloatField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     finishes = models.CharField(max_length=200, null=True, blank=True)
-    category_name = models.CharField(choices=CATEGORY_CHOICES, default=CATEGORY_CHOICES[0], max_length=200, null=True)
+    main_category = models.CharField(choices=MAIN_CATEGORY_CHOICES, default=MAIN_CATEGORY_CHOICES[0], max_length=200,
+                                     null=True)
+    sub_category = models.CharField(choices=SUB_CATEGORY_CHOICES, default=SUB_CATEGORY_CHOICES[0], max_length=200,
+                                    null=True)
+    sub_sub_category = models.CharField(choices=SUB_SUB_CATEGORY_CHOICES, default=SUB_SUB_CATEGORY_CHOICES[0], max_length=200,
+                                        null=True)
     is_in_stock = models.BooleanField(verbose_name='Is in stock?', default=True)
 
     def __str__(self):
