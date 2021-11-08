@@ -56,3 +56,24 @@ def about(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def bathroom(request):
+    return render(request, 'bathroom.html')
+
+def closet(request):
+    return render(request, 'closet.html')
+
+def enclosure(request):
+    return render(request, 'enclosure.html')
+
+def hardware(request):
+    return render(request, 'hardware.html')
+
+def noSearch(request):
+    return render(request, 'no-search-result.html')
+
+def search(request):
+    return render(request, 'search.html')
+
+def singleProduct(request):
+    return render(request, 'singleProduct.html')

@@ -1,1072 +1,693 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'main.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="google-site-verification" content="x-yIsyN67gjyaAJNZ1nl9GYODhwP9-c9AkLCWuC_-fQ" />
-  <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <link rel="stylesheet" type="text/css" href="/asset/app.css">
-  <link rel="stylesheet" href="/asset/smoothproducts.css">
-  <link rel="stylesheet" href="/asset/custom.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+{% load static %}
 
-  <title> Unique Living</title>
+{% block content %}
 
-  <link rel="icon" href="http://d1z9ehtk9rps9k.cloudfront.net/logos/uniquefavicon.png" type="image/png">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148378916-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-148378916-1');
-  </script>
- 
-  <script>
-    $(document).ready(function () {
-      var url = window.location;
-      $('ul.navbar-nav a[href="' + url + '"]').parent().addClass('active');
-      $('ul.navbar-nav a').filter(function () {
-        return this.href == url;
-      }).parent().addClass('active');
-    });
-  </script>
 
-</head>
-
-<body>
-<!-- navbar start  -->
-    <nav class="navbar navbar-expand-sm secondary">
-        <div class="container">
-          <a class="navbar-brand" href="/">
-            <img src="http://d1z9ehtk9rps9k.cloudfront.net/logos/UniqueLogo.png" alt="Unique Living" width="200" height="75">
-          </a>
-          <ul class="nav justify-content-end">
-            <li class="nav-item second">
-              <a class="nav-link text-dark second">
-                <img src="http://d1z9ehtk9rps9k.cloudfront.net/logos/Call.png" alt="faucets"> (876)-618-3639</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link text-dark second" href="/contact-us#contact_form">
-                <img src="http://d1z9ehtk9rps9k.cloudfront.net/logos/mail.png" alt="mail">
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="https://www.facebook.com/uniquelivingjamaica/">
-                <img src="http://d1z9ehtk9rps9k.cloudfront.net/logos/facebook.png" alt="facebook">
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="https://www.instagram.com/uniquelivingjamaica/">
-                <img src="http://d1z9ehtk9rps9k.cloudfront.net/logos/instagram.png" alt="instagram" style="width:36px;height:35px">
-              </a>
-            </li>
-          </ul>
-        </div>
-    </nav>
-
-  <div class="container thetop responsive">
-    <nav class="navbar navbar-expand-sm below navbar-dark bg-warning">
-      <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item  font-weight-bold">
-              <a class="nav-link text-dark" href="/">Home </a>
-            </li>
-            <li class="nav-item dropdown font-weight-bold" style="box-sizing: border-box;">
-              <a class="nav-link text-dark" href="/category/bathroom" role="button" aria-haspopup="true"
-                aria-expanded="false">Bathroom</a>
-              <div class="data-toggle=collapse navbar-expand-sm" style="box-sizing: border-box;">
-                <ul class="dropdown-menu">
-                  <li class="list-group horizontal responsive">
-                    <a class="dropdown-item" href="/category/bathroom/subcategory/basin-faucets">
-                      <img class="sub-nav-img img-fluid" src="http://d1z9ehtk9rps9k.cloudfront.net/facuetsmini.jpeg"
-                        alt="bathroom-faucets">
-                      <p class="text-center">Faucets</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item horizontal" href="/category/bathroom/addcategory/showers">
-                      <img class="sub-nav-img img-fluid"
-                        src="http://d1z9ehtk9rps9k.cloudfront.net/bathroom-shower-and-spa.jpeg" alt="shower">
-                      <p class="text-center">Shower</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item horizontal" href="/category/bathroom/subcategory/sinks">
-                      <img class="sub-nav-img img-fluid" src="http://d1z9ehtk9rps9k.cloudfront.net/42300000.jpg" alt="sink">
-                      <p class="text-center">Sinks</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="/category/bathroom/subcategory/toilets">
-                      <img class="sub-nav-img img-fluid" src="http://d1z9ehtk9rps9k.cloudfront.net/MW6263046CEFG_01.png"
-                        alt="toilets">
-                      <p class="text-center">Toilets</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="/category/bathroom/addcategory/accessories">
-                      <img class="sub-nav-img img-fluid" src="http://d1z9ehtk9rps9k.cloudfront.net/accessories.jpeg"
-                        alt="accessories">
-                      <p class="text-center">Accessories</p>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item dropdown font-weight-bold" style="box-sizing: border-box;">
-              <a class="nav-link text-dark" href="/category/kitchen" role="button" aria-haspopup="true"
-                aria-expanded="false">Kitchen</a>
-              <ul class="dropdown-menu">
-                <li class="list-group horizontal">
-                  <a class="dropdown-item" href="/category/kitchen/subcategory/sinks">
-                    <img class="sub-nav-img" src="http://d1z9ehtk9rps9k.cloudfront.net/as106.jpg" alt="kitchen sinks">
-                    <p class="text-center">Sinks</p>
-                  </a>
-                </li>
-                <li class="list-group horizontal">
-                  <a class="dropdown-item" href="/category/kitchen/subcategory/faucets">
-                    <img class="sub-nav-img" src="http://d1z9ehtk9rps9k.cloudfront.net/5923.jpg" alt="kitchen faucets">
-                    <p class="text-center">Faucets</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown font-weight-bold">
-              <a class="nav-link text-dark" href="/category/commercial" role="button" aria-haspopup="true"
-                aria-expanded="false">Commercial</a>
-              <ul class="dropdown-menu">
-                <li class="list-group horizontal">
-                  <a class="dropdown-item" href="/category/commercial/subcategory/bathroom-sinks">
-                    <img class="sub-nav-img" src="http://d1z9ehtk9rps9k.cloudfront.net/LT56901.png"
-                      alt="commercial-bathroom-sinks">
-                    <p class="text-center">Sinks</p>
-                  </a>
-                </li>
-                <li class="list-group horizontal">
-                  <a class="dropdown-item" href="/category/commercial/subcategory/toilets">
-                    <img class="sub-nav-img" src="http://d1z9ehtk9rps9k.cloudfront.net/UT104E01.png"
-                      alt="commercial-toilets">
-                    <p class="text-center">Toilets</p>
-                  </a>
-                </li>
-                <li class="list-group horizontal">
-                  <a class="dropdown-item" href="/category/commercial/subcategory/towel-dispenser">
-                    <img class="sub-nav-img" src="http://d1z9ehtk9rps9k.cloudfront.net/2494000000.jpg"
-                      alt="commercial-towel-dispensers">
-                    <p class="text-center">Towel Dispensers</p>
-                  </a>
-                </li>
-                <li class="list-group horizontal">
-                  <a class="dropdown-item" href="/category/commercial/subcategory/soap-dispenser">
-                    <img class="sub-nav-img" src="http://d1z9ehtk9rps9k.cloudfront.net/6542000000.jpg"
-                      alt="commercial-soap-dispenser">
-                    <p class="text-center">Soap Dispensers</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown font-weight-bold" style="box-sizing: border-box;">
-              <a class="nav-link text-dark" href="/category/hardware" role="button" aria-haspopup="true"
-                aria-expanded="false">Hardware</a>
-              <ul class="dropdown-menu">
-                <li class="list-group horizontal">
-                  <a class="dropdown-item" href="/category/hardware/subcategory/shanks">
-                    <img class="sub-nav-img" src="http://d1z9ehtk9rps9k.cloudfront.net/45414.jpg" alt="hardware-shanks">
-                    <p class="text-center">Shanks</p>
-                  </a>
-                </li>
-                <li class="list-group horizontal">
-                  <a class="dropdown-item" href="/category/hardware/subcategory/glues">
-                    <img class="sub-nav-img" src="http://d1z9ehtk9rps9k.cloudfront.net/5004.jpg" alt="hardware-glues">
-                    <p class="text-center">Glues</p>
-                  </a>
-                </li>
-                <li class="list-group horizontal">
-                  <a class="dropdown-item" href="/category/hardware/subcategory/hinges">
-                    <img class="sub-nav-img" src="http://d1z9ehtk9rps9k.cloudfront.net/31190560.jpg" alt="hardware-hinges">
-                    <p class="text-center">Hinges</p>
-                  </a>
-                </li>
-                <li class="list-group horizontal">
-                  <a class="dropdown-item" href="/category/hardware/subcategory/circular-blades">
-                    <img class="sub-nav-img" src="http://d1z9ehtk9rps9k.cloudfront.net/md10-240.jpg"
-                      alt="hardware-circular-blades">
-                    <p class="text-center">Blades</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item font-weight-bold">
-              <a class="nav-link text-dark" href="/enclosure">Shower Enclosures</a>
-            </li>
-            <li class="nav-item font-weight-bold">
-              <a class="nav-link text-dark" href="/closet">Closets</a>
-            </li>
-            <li class="nav-item font-weight-bold">
-              <a class="nav-link text-dark" href="/about">About Us</a>
-            </li>
-            <li class="nav-item font-weight-bold">
-              <a class="nav-link text-dark" href="/contact-us">Contact Us</a>
-            </li>
-          </ul>
-    
-        </div>
-      </div>
-    </nav>
-    
-    </div>
-
-<!-- navbar end -->
-
-<div class="container thetop responsive">
-    <form class="d-flex flex-row align-items-end mt-1 justify-content-end" action="/search" method="GET">
-        <input class="form-control p2 col-3" type="search" name="query" placeholder="Search" aria-label="Search" required="true">
-        <button class="btn btn-outline-warning my-2 my-sm-0 form-control-btn" type="submit">Search</button>
-    </form>    <div class="modal fade mb-2" id="feedback" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal" aria-hidden="true">
-  <div class="modal-dialog modal-lg" style="position: relative; top: 35%; left:10%" role="document">
-    <div class="modal-content" style="width: 600px; height: 300px; background: orange url('http://d1z9ehtk9rps9k.cloudfront.net/logos/UniqueLogo.png'); background-size: cover;">
-      <div style="width:100%;">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size:20px;">X</button>
-      </div>
-      <div style="width:90%;height:50%; position: relative; bottom: -25%; left: 5%;">
-        <!-- Begin MailChimp Signup Form -->
-        <link href="/public/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-        <style type="text/css">
-        	#mc_embed_signup{background:#d46b44; clear:left; font:14px; width:100%;},
-        	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-        	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-        </style>
-        <div id="mc_embed_signup">
-        <form action="/mailing" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate="">
-            <div id="mc_embed_signup_scroll">
-        	<label for="mce-EMAIL"> Subscribe to our mailing list</label>
-        	<input type="email" value="" name="email" style="width:95%" class="email" id="mce-EMAIL" placeholder="email address" required="">
-            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div class="clear"><input type="submit" class="btn btn-dark mt-2"></div>
+<div class="modal fade mb-2" id="feedback" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="position: relative; top: 35%; left:10%" role="document">
+        <div class="modal-content"
+             style="width: 600px; height: 300px; background: orange url('http://d1z9ehtk9rps9k.cloudfront.net/logos/UniqueLogo.png'); background-size: cover;">
+            <div style="width:100%;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size:20px;">X
+                </button>
             </div>
-        </form>
+            <div style="width:90%;height:50%; position: relative; bottom: -25%; left: 5%;">
+                <!-- Begin MailChimp Signup Form -->
+                <link href="/public/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+                <style type="text/css">
+                    #mc_embed_signup {
+                        background: #d46b44;
+                        clear: left;
+                        font: 14px;
+                        width: 100%;
+                    }
+
+                    ,
+                    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                </style>
+                <div id="mc_embed_signup">
+                    <form action="/mailing" method="post" id="mc-embedded-subscribe-form"
+                          name="mc-embedded-subscribe-form" class="validate" novalidate="">
+                        <div id="mc_embed_signup_scroll">
+                            <label for="mce-EMAIL"> Subscribe to our mailing list</label>
+                            <input type="email" value="" name="email" style="width:95%" class="email" id="mce-EMAIL"
+                                   placeholder="email address" required="">
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div class="clear"><input type="submit" class="btn btn-dark mt-2"></div>
+                        </div>
+                    </form>
+                </div>
+
+                <!--End mc_embed_signup-->
+
+            </div>
         </div>
-        
-        <!--End mc_embed_signup-->
-        
-      </div>
     </div>
-  </div>
 </div>
-<br> <div class="container products thetop">
-  <ol class="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
-</ol> <h1 class="text-center mt-3 capitalize" id="#top-section">Hardware</h1>   
-  <hr class="hr-below-title mb-4">    
-<div class="float-left sticky-top d-none d-lg-block">
-  <div>
-    <ul class="justify-content-center list-inline">
-      <li class="nav-item">
-        <a class="nav-link categories">
-          <h5>Categories: </h5>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories cat-up" href="/category/hardware/subcategory/shanks">shanks</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories cat-up" href="/category/hardware/subcategory/circular-blades">circular-blades</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories cat-up" href="/category/hardware/subcategory/ball-bearings">ball-bearings</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories cat-up" href="/category/hardware/subcategory/compressors">compressors</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories cat-up" href="/category/hardware/subcategory/finish-nailers">finish-nailers</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories cat-up" href="/category/hardware/subcategory/glues">glues</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories cat-up" href="/category/hardware/subcategory/hinges">hinges</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories cat-up" href="/category/hardware/subcategory/bin-holders">bin-holders</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories cat-up" href="/category/hardware/subcategory/lazy-susans">lazy-susans</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories cat-up" href="/category/hardware/subcategory/lid-stay">lid-stay</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories cat-up" href="/category/hardware/subcategory/locks">locks</a>
-      </li>
-    </ul>
-  </div>
-  <div class="mb-2">
-    <ul class="justify-content-center list-inline">
-      <li class="nav-item">
-        <a class="nav-link categories">
-          <h5>Brands: </h5>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories" href="/category/hardware/brand/AMANA">AMANA</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories" href="/category/hardware/brand/TIMBERLINE">TIMBERLINE</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories" href="/category/hardware/brand/AGE-Series">AGE-Series</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories" href="/category/hardware/brand/SENCO">SENCO</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories" href="/category/hardware/brand/TITEBOND">TITEBOND</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories" href="/category/hardware/brand/HAFELE">HAFELE</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories" href="/category/hardware/brand/Hardware-Concepts">Hardware-Concepts</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link categories" href="/category/hardware/brand/SCHLAGE">SCHLAGE</a>
-      </li>
-    </ul>
-  </div>
-</div>
-     
-<div class="d-lg-none d-xl-none">
-  <ul class="nav justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link categories">Categories: </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories cat-up" href="/category/hardware/subcategory/shanks">shanks</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories cat-up" href="/category/hardware/subcategory/circular-blades">circular-blades</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories cat-up" href="/category/hardware/subcategory/ball-bearings">ball-bearings</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories cat-up" href="/category/hardware/subcategory/compressors">compressors</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories cat-up" href="/category/hardware/subcategory/finish-nailers">finish-nailers</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories cat-up" href="/category/hardware/subcategory/glues">glues</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories cat-up" href="/category/hardware/subcategory/hinges">hinges</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories cat-up" href="/category/hardware/subcategory/bin-holders">bin-holders</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories cat-up" href="/category/hardware/subcategory/lazy-susans">lazy-susans</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories cat-up" href="/category/hardware/subcategory/lid-stay">lid-stay</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories cat-up" href="/category/hardware/subcategory/locks">locks</a>
-    </li>
-  </ul>
-</div>
-<div class="mb-2 d-lg-none d-xl-none">
-  <ul class="nav justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link categories">Brands: </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories" href="/category/hardware/brand/AMANA">AMANA</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories" href="/category/hardware/brand/TIMBERLINE">TIMBERLINE</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories" href="/category/hardware/brand/AGE-Series">AGE-Series</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories" href="/category/hardware/brand/SENCO">SENCO</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories" href="/category/hardware/brand/TITEBOND">TITEBOND</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories" href="/category/hardware/brand/HAFELE">HAFELE</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories" href="/category/hardware/brand/Hardware-Concepts">Hardware-Concepts</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link categories" href="/category/hardware/brand/SCHLAGE">SCHLAGE</a>
-    </li>
-  </ul>
-</div>
+<br>
+<div class="container products thetop">
+    <ol class="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
+    </ol>
+    <h1 class="text-center mt-3 capitalize" id="#top-section">Hardware</h1>
+    <hr class="hr-below-title mb-4">
+    <div class="float-left sticky-top d-none d-lg-block">
+        <div>
+            <ul class="justify-content-center list-inline">
+                <li class="nav-item">
+                    <a class="nav-link categories">
+                        <h5>Categories: </h5>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories cat-up" href="/category/hardware/subcategory/shanks">shanks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories cat-up" href="/category/hardware/subcategory/circular-blades">circular-blades</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories cat-up" href="/category/hardware/subcategory/ball-bearings">ball-bearings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories cat-up"
+                       href="/category/hardware/subcategory/compressors">compressors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories cat-up" href="/category/hardware/subcategory/finish-nailers">finish-nailers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories cat-up" href="/category/hardware/subcategory/glues">glues</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories cat-up" href="/category/hardware/subcategory/hinges">hinges</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories cat-up"
+                       href="/category/hardware/subcategory/bin-holders">bin-holders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories cat-up"
+                       href="/category/hardware/subcategory/lazy-susans">lazy-susans</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories cat-up" href="/category/hardware/subcategory/lid-stay">lid-stay</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories cat-up" href="/category/hardware/subcategory/locks">locks</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mb-2">
+            <ul class="justify-content-center list-inline">
+                <li class="nav-item">
+                    <a class="nav-link categories">
+                        <h5>Brands: </h5>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories" href="/category/hardware/brand/AMANA">AMANA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories" href="/category/hardware/brand/TIMBERLINE">TIMBERLINE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories" href="/category/hardware/brand/AGE-Series">AGE-Series</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories" href="/category/hardware/brand/SENCO">SENCO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories" href="/category/hardware/brand/TITEBOND">TITEBOND</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories" href="/category/hardware/brand/HAFELE">HAFELE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories"
+                       href="/category/hardware/brand/Hardware-Concepts">Hardware-Concepts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link categories" href="/category/hardware/brand/SCHLAGE">SCHLAGE</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-  <div class="col-md-12" id="list">
-    <div class="row prod-list" style="margin: 0px">
+    <div class="d-lg-none d-xl-none">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link categories">Categories: </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories cat-up" href="/category/hardware/subcategory/shanks">shanks</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories cat-up" href="/category/hardware/subcategory/circular-blades">circular-blades</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories cat-up"
+                   href="/category/hardware/subcategory/ball-bearings">ball-bearings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories cat-up" href="/category/hardware/subcategory/compressors">compressors</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories cat-up" href="/category/hardware/subcategory/finish-nailers">finish-nailers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories cat-up" href="/category/hardware/subcategory/glues">glues</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories cat-up" href="/category/hardware/subcategory/hinges">hinges</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories cat-up" href="/category/hardware/subcategory/bin-holders">bin-holders</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories cat-up" href="/category/hardware/subcategory/lazy-susans">lazy-susans</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories cat-up" href="/category/hardware/subcategory/lid-stay">lid-stay</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories cat-up" href="/category/hardware/subcategory/locks">locks</a>
+            </li>
+        </ul>
+    </div>
+    <div class="mb-2 d-lg-none d-xl-none">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link categories">Brands: </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories" href="/category/hardware/brand/AMANA">AMANA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories" href="/category/hardware/brand/TIMBERLINE">TIMBERLINE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories" href="/category/hardware/brand/AGE-Series">AGE-Series</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories" href="/category/hardware/brand/SENCO">SENCO</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories" href="/category/hardware/brand/TITEBOND">TITEBOND</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories" href="/category/hardware/brand/HAFELE">HAFELE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories" href="/category/hardware/brand/Hardware-Concepts">Hardware-Concepts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link categories" href="/category/hardware/brand/SCHLAGE">SCHLAGE</a>
+            </li>
+        </ul>
+    </div>
 
-       <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/45414">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/45414.jpg" alt="Carbide Tipped Straight Plunge High Production 3/8 Dia X 1 Inch X 1/2 Shank" data-productname="Carbide Tipped Straight Plunge High Production 3/8 Dia X 1 Inch X 1/2 Shank">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+    <div class="col-md-12" id="list">
+        <div class="row prod-list" style="margin: 0px">
+
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/45414">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/45414.jpg"
+                                 alt="Carbide Tipped Straight Plunge High Production 3/8 Dia X 1 Inch X 1/2 Shank"
+                                 data-productname="Carbide Tipped Straight Plunge High Production 3/8 Dia X 1 Inch X 1/2 Shank">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>AMANA</b> Carbide Tipped Straight Plunge High Production 3/8 Dia X 1 Inch X 1/2 Shank
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/45418">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/45418.jpg" alt="_carbide Tipped Straight Plunge 1/2 Dia X 1 Inch X 1/2 Shank" data-productname="_carbide Tipped Straight Plunge 1/2 Dia X 1 Inch X 1/2 Shank">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/45418">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/45418.jpg"
+                                 alt="_carbide Tipped Straight Plunge 1/2 Dia X 1 Inch X 1/2 Shank"
+                                 data-productname="_carbide Tipped Straight Plunge 1/2 Dia X 1 Inch X 1/2 Shank">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>AMANA</b> _carbide Tipped Straight Plunge 1/2 Dia X 1 Inch X 1/2 Shank
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/45426">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/45426.jpg" alt="Carbide Tipped Straight Plunge 1/2 Dia X 2 Inch X 1/2 Shank" data-productname="Carbide Tipped Straight Plunge 1/2 Dia X 2 Inch X 1/2 Shank">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/45426">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/45426.jpg"
+                                 alt="Carbide Tipped Straight Plunge 1/2 Dia X 2 Inch X 1/2 Shank"
+                                 data-productname="Carbide Tipped Straight Plunge 1/2 Dia X 2 Inch X 1/2 Shank">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>AMANA</b> Carbide Tipped Straight Plunge 1/2 Dia X 2 Inch X 1/2 Shank
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/45427">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/45427.jpg" alt="Carbide Tipped Straight Plunge 1/2 Dia X 2-1/2 X 1/2 Inch Shank" data-productname="Carbide Tipped Straight Plunge 1/2 Dia X 2-1/2 X 1/2 Inch Shank">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/45427">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/45427.jpg"
+                                 alt="Carbide Tipped Straight Plunge 1/2 Dia X 2-1/2 X 1/2 Inch Shank"
+                                 data-productname="Carbide Tipped Straight Plunge 1/2 Dia X 2-1/2 X 1/2 Inch Shank">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>AMANA</b> Carbide Tipped Straight Plunge 1/2 Dia X 2-1/2 X 1/2 Inch Shank
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/EB-351">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/EB-351.jpg" alt="Carbide Tipped Economy Hinge Boring Bit R/H 35Mm Dia X 90Mm Long X 3/8 Shank" data-productname="Carbide Tipped Economy Hinge Boring Bit R/H 35Mm Dia X 90Mm Long X 3/8 Shank">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/EB-351">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/EB-351.jpg"
+                                 alt="Carbide Tipped Economy Hinge Boring Bit R/H 35Mm Dia X 90Mm Long X 3/8 Shank"
+                                 data-productname="Carbide Tipped Economy Hinge Boring Bit R/H 35Mm Dia X 90Mm Long X 3/8 Shank">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>AMANA</b> Carbide Tipped Economy Hinge Boring Bit R/H 35Mm Dia X 90Mm Long X 3/8 Shank
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/340-10">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/340-10.jpg" alt="Carbide Tipped 1/4&quot; &amp; 1/2&quot; Shank " data-productname="Carbide Tipped 1/4&quot; &amp; 1/2&quot; Shank ">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/340-10">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/340-10.jpg"
+                                 alt="Carbide Tipped 1/4&quot; &amp; 1/2&quot; Shank "
+                                 data-productname="Carbide Tipped 1/4&quot; &amp; 1/2&quot; Shank ">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>TIMBERLINE</b> Carbide Tipped 1/4" &amp; 1/2" Shank 
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/47511">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/47511.jpg" alt="Carbide Tipped Cope Cutter With Stub Spindle - 11/32 Radius X 2 Inch Dia X 11/16 X 1/2 Shank For 1-3/4 Material" data-productname="Carbide Tipped Cope Cutter With Stub Spindle - 11/32 Radius X 2 Inch Dia X 11/16 X 1/2 Shank For 1-3/4 Material">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/47511">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/47511.jpg"
+                                 alt="Carbide Tipped Cope Cutter With Stub Spindle - 11/32 Radius X 2 Inch Dia X 11/16 X 1/2 Shank For 1-3/4 Material"
+                                 data-productname="Carbide Tipped Cope Cutter With Stub Spindle - 11/32 Radius X 2 Inch Dia X 11/16 X 1/2 Shank For 1-3/4 Material">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>AMANA</b> Carbide Tipped Cope Cutter With Stub Spindle - 11/32 Radius X 2 Inch Dia X 11/16 X 1/2 Shank For 1-3/4 Material
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/54142">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/54142.jpg" alt="Carbide Tipped Classical Molding 7/32 Radius X 1-3/8 Dia X 11/16 X 1/2 Inch Shank" data-productname="Carbide Tipped Classical Molding 7/32 Radius X 1-3/8 Dia X 11/16 X 1/2 Inch Shank">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/54142">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/54142.jpg"
+                                 alt="Carbide Tipped Classical Molding 7/32 Radius X 1-3/8 Dia X 11/16 X 1/2 Inch Shank"
+                                 data-productname="Carbide Tipped Classical Molding 7/32 Radius X 1-3/8 Dia X 11/16 X 1/2 Inch Shank">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>AMANA</b> Carbide Tipped Classical Molding 7/32 Radius X 1-3/8 Dia X 11/16 X 1/2 Inch Shank
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/54118">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/54118.jpg" alt="Carbide Tipped Ogee Raised Panel 3/4 Radius X 2-5/8 Dia X 5/8 X 1/2 Inch Shank" data-productname="Carbide Tipped Ogee Raised Panel 3/4 Radius X 2-5/8 Dia X 5/8 X 1/2 Inch Shank">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/54118">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/54118.jpg"
+                                 alt="Carbide Tipped Ogee Raised Panel 3/4 Radius X 2-5/8 Dia X 5/8 X 1/2 Inch Shank"
+                                 data-productname="Carbide Tipped Ogee Raised Panel 3/4 Radius X 2-5/8 Dia X 5/8 X 1/2 Inch Shank">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>AMANA</b> Carbide Tipped Ogee Raised Panel 3/4 Radius X 2-5/8 Dia X 5/8 X 1/2 Inch Shank
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/54224">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/54224.jpg" alt="Carbide Tipped Classical Architectural Molding 1/8 X 5/32 X 5/32 Radius X 1-3/8 Dia X 1-5/8 X 1/2 Inch Shank" data-productname="Carbide Tipped Classical Architectural Molding 1/8 X 5/32 X 5/32 Radius X 1-3/8 Dia X 1-5/8 X 1/2 Inch Shank">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/54224">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/54224.jpg"
+                                 alt="Carbide Tipped Classical Architectural Molding 1/8 X 5/32 X 5/32 Radius X 1-3/8 Dia X 1-5/8 X 1/2 Inch Shank"
+                                 data-productname="Carbide Tipped Classical Architectural Molding 1/8 X 5/32 X 5/32 Radius X 1-3/8 Dia X 1-5/8 X 1/2 Inch Shank">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>AMANA</b> Carbide Tipped Classical Architectural Molding 1/8 X 5/32 X 5/32 Radius X 1-3/8 Dia X 1-5/8 X 1/2 Inch Shank
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/49200">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/49200.jpg" alt="Carbide Tipped Roman Ogee 5/32 Radius X 1 Inch Dia X 5/8 X 1/4 Shank" data-productname="Carbide Tipped Roman Ogee 5/32 Radius X 1 Inch Dia X 5/8 X 1/4 Shank">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/49200">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/49200.jpg"
+                                 alt="Carbide Tipped Roman Ogee 5/32 Radius X 1 Inch Dia X 5/8 X 1/4 Shank"
+                                 data-productname="Carbide Tipped Roman Ogee 5/32 Radius X 1 Inch Dia X 5/8 X 1/4 Shank">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>AMANA</b> Carbide Tipped Roman Ogee 5/32 Radius X 1 Inch Dia X 5/8 X 1/4 Shank
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/TRS-260">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/trs-260.jpg" alt="Carbide Tipped 3-Piece Ogee Raised Panel Door Making Set 1/2&quot; Shank For 5/8&quot;-7/8&quot; Material" data-productname="Carbide Tipped 3-Piece Ogee Raised Panel Door Making Set 1/2&quot; Shank For 5/8&quot;-7/8&quot; Material">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/TRS-260">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/trs-260.jpg"
+                                 alt="Carbide Tipped 3-Piece Ogee Raised Panel Door Making Set 1/2&quot; Shank For 5/8&quot;-7/8&quot; Material"
+                                 data-productname="Carbide Tipped 3-Piece Ogee Raised Panel Door Making Set 1/2&quot; Shank For 5/8&quot;-7/8&quot; Material">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>TIMBERLINE</b> Carbide Tipped 3-Piece Ogee Raised Panel Door Making Set 1/2" Shank For 5/8"-7/8" Material
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/TRS-130">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/trs-130.jpg" alt="Carbide Tipped 3-Piece Tongue &amp; Groove Cabinet Door Making Sett 1/2&quot; Shank For 1/2&quot;-1&quot; Material" data-productname="Carbide Tipped 3-Piece Tongue &amp; Groove Cabinet Door Making Sett 1/2&quot; Shank For 1/2&quot;-1&quot; Material">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/TRS-130">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/trs-130.jpg"
+                                 alt="Carbide Tipped 3-Piece Tongue &amp; Groove Cabinet Door Making Sett 1/2&quot; Shank For 1/2&quot;-1&quot; Material"
+                                 data-productname="Carbide Tipped 3-Piece Tongue &amp; Groove Cabinet Door Making Sett 1/2&quot; Shank For 1/2&quot;-1&quot; Material">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>TIMBERLINE</b> Carbide Tipped 3-Piece Tongue &amp; Groove Cabinet Door Making Sett 1/2" Shank For 1/2"-1" Material
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/TRS-280">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/trs-280.jpg" alt="Carbide Tipped 3-Piece Tongue &amp; Groove Cabinet Door Making Sett 1/2&quot; Shank For 5/8&quot;-7/8&quot; Material" data-productname="Carbide Tipped 3-Piece Tongue &amp; Groove Cabinet Door Making Sett 1/2&quot; Shank For 5/8&quot;-7/8&quot; Material">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/TRS-280">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/trs-280.jpg"
+                                 alt="Carbide Tipped 3-Piece Tongue &amp; Groove Cabinet Door Making Sett 1/2&quot; Shank For 5/8&quot;-7/8&quot; Material"
+                                 data-productname="Carbide Tipped 3-Piece Tongue &amp; Groove Cabinet Door Making Sett 1/2&quot; Shank For 5/8&quot;-7/8&quot; Material">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>TIMBERLINE</b> Carbide Tipped 3-Piece Tongue &amp; Groove Cabinet Door Making Sett 1/2" Shank For 5/8"-7/8" Material
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/460-12">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/460-12.jpg" alt="Carbide Tipped Cove Raised Panel Router Bit 1/2&quot; Shank " data-productname="Carbide Tipped Cove Raised Panel Router Bit 1/2&quot; Shank ">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/460-12">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/460-12.jpg"
+                                 alt="Carbide Tipped Cove Raised Panel Router Bit 1/2&quot; Shank "
+                                 data-productname="Carbide Tipped Cove Raised Panel Router Bit 1/2&quot; Shank ">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>TIMBERLINE</b> Carbide Tipped Cove Raised Panel Router Bit 1/2" Shank 
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/MD10-240">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/md10-240.jpg" alt="Carbide Tipped Ripping 10 Inch Dia X 24T Atbnull 20 Deg'' 5/8 Bore Circular Saw Blade" data-productname="Carbide Tipped Ripping 10 Inch Dia X 24T Atbnull 20 Deg'' 5/8 Bore Circular Saw Blade">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/MD10-240">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/md10-240.jpg"
+                                 alt="Carbide Tipped Ripping 10 Inch Dia X 24T Atbnull 20 Deg'' 5/8 Bore Circular Saw Blade"
+                                 data-productname="Carbide Tipped Ripping 10 Inch Dia X 24T Atbnull 20 Deg'' 5/8 Bore Circular Saw Blade">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>AGE-Series</b> Carbide Tipped Ripping 10 Inch Dia X 24T Atbnull 20 Deg'' 5/8 Bore Circular Saw Blade
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/MD10-400">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/md10-400.jpg" alt="Carbide Tipped General Purpose 10 Inch Dia X 40T Atb'' 15 Deg'' 5/8 Bore Circular Saw Blade" data-productname="Carbide Tipped General Purpose 10 Inch Dia X 40T Atb'' 15 Deg'' 5/8 Bore Circular Saw Blade">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/MD10-400">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/md10-400.jpg"
+                                 alt="Carbide Tipped General Purpose 10 Inch Dia X 40T Atb'' 15 Deg'' 5/8 Bore Circular Saw Blade"
+                                 data-productname="Carbide Tipped General Purpose 10 Inch Dia X 40T Atb'' 15 Deg'' 5/8 Bore Circular Saw Blade">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>AGE-Series</b> Carbide Tipped General Purpose 10 Inch Dia X 40T Atb'' 15 Deg'' 5/8 Bore Circular Saw Blade
           </span>
-        </p>
+                            </p>
 
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="card text-center col-sm-4" style="width: 22rem;">
-  <a href="/category/hardware/MD10-500">
-    <div class="card-body" style="text-align:center;">
-      <div style="height: 250px; width: 250px;">
-        <img class="card-img-top card-img prodimg" style="position: relative;margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/md10-500.jpg" alt="Carbide Tipped Combination 10 Inch Dia X 50T 4+1'' 20 Deg'' 5/8 Bore Circular Saw Blade" data-productname="Carbide Tipped Combination 10 Inch Dia X 50T 4+1'' 20 Deg'' 5/8 Bore Circular Saw Blade">
-      </div>
-      <div>
-        <p class="card-title card-title-prod">
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card text-center col-sm-4" style="width: 22rem;">
+                <a href="/category/hardware/MD10-500">
+                    <div class="card-body" style="text-align:center;">
+                        <div style="height: 250px; width: 250px;">
+                            <img class="card-img-top card-img prodimg"
+                                 style="position: relative;margin-left: auto;margin-right:auto;"
+                                 src="http://d1z9ehtk9rps9k.cloudfront.net/md10-500.jpg"
+                                 alt="Carbide Tipped Combination 10 Inch Dia X 50T 4+1'' 20 Deg'' 5/8 Bore Circular Saw Blade"
+                                 data-productname="Carbide Tipped Combination 10 Inch Dia X 50T 4+1'' 20 Deg'' 5/8 Bore Circular Saw Blade">
+                        </div>
+                        <div>
+                            <p class="card-title card-title-prod">
           <span>
 
             <b>AGE-Series</b> Carbide Tipped Combination 10 Inch Dia X 50T 4+1'' 20 Deg'' 5/8 Bore Circular Saw Blade
           </span>
-        </p>
-
-           
-      </div>
-    </div>
-  </a>
-</div>  <div class="container mt-20">
-  <div class="pagination pagination-centered">
-    <ul>
-      <li class="disabled">
-        <a href="?p=1">First</a>
-      </li>
-       
-      <li class="disabled">
-        <a href="?p=1">Prev</a>
-      </li>
-       
-      <li class="active">
-        <a href="?p=1">1</a>
-      </li>
-      
-      <li>
-        <a href="?p=2">2</a>
-      </li>
-      
-      <li>
-        <a href="?p=3">3</a>
-      </li>
-      
-      <li>
-        <a href="?p=4">4</a>
-      </li>
-       
-      <li>
-        <a href="?p=2">Next</a>
-      </li>
-       
-      <li>
-        <a href="?p=4">Last</a>
-      </li>
-    </ul>
-  </div>
-</div>
-    </div>
-
-  </div>
-</div>
+                            </p>
 
 
-    <div class="modal fade" id="enlargeImageModal" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal" aria-hidden="true">
-      <div class="modal-dialog modal-md" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <p class="enlargeName"></p>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body" style="text-align: center;">
-            <img src="" class="enlargeImageModalSource" style="width: 75%;max-height:500px">
-          </div>
-        </div>
-      </div>
-    </div>
-    <a id="back-to-top" href="#" class="btn btn-warning btn-sm back-to-top" role="button" title="" data-toggle="tooltip" data-placement="left" data-original-title="" style="display: block;">
-      <i class="fal fa-arrow-circle-up"></i>Back-to-Top</a>
-  </div>
-
-
-
-<!--Footer-->
-<footer class="page-footer bg-warning">
-    <!--Footer Links-->
-    <div class="container">
-        <!-- Footer links -->
-        <div class="row text-center text-md-left mt-3 pb-3">
-            <!--First column-->
-            <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
-                <a class="navbar-brand" href="/">
-                    <img src="http://d1z9ehtk9rps9k.cloudfront.net/logos/UniqueLogo.png" alt="Unique Living" width="80" height="40">
+                        </div>
+                    </div>
                 </a>
-                <p>
-                    <strong>
-                        <i>Where quality meets expectation!</i>
-                    </strong>
-                </p>
-                {{> inline_contact}}
             </div>
-            <!--/.First column-->
-            <hr class="w-100 clearfix d-md-none">
-            <!--Second column-->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                <ul class="foot-link text-center" style="list-style: none; padding: 0">
-                    <li>
-                        <h6 class="title mb-4 font-bold text-center foot-link">Products</h6>
-                    </li>
-                    <li>
-                        <a href="/category/kitchen">Kitchen</a>
-                    </li>
-                    <li>
-                        <a href="/category/bathroom/subcategory/toilets">Toilets</a>
-                    </li>
-                    <li>
-                        <a href="/category/bathroom/subcategory/showers">Showers</a>
-                    </li>
-                    <li>
-                        <a href="/enclosure">Enclosures</a>
-                    </li>
-                </ul>
-            </div>
-            <!--/.Second column-->
-            <hr class="w-100 clearfix d-md-none">
-            <!--Third column-->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <div class="container mt-20">
+                <div class="pagination pagination-centered">
+                    <ul>
+                        <li class="disabled">
+                            <a href="?p=1">First</a>
+                        </li>
 
-                <ul class="foot-link text-center" style="list-style: none; padding:0;">
-                    <li>
-                        <h6 class="title mb-4 font-bold text-center foot-link">Useful links</h6>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/uniquelivingjamaica/">Facebook</a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/uniquelivingjamaica/">Instagram</a>
-                    </li>
-                </ul>
-            </div>
-            <!--/.Third column-->
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                <h6 class="title mb-4 font-bold foot-link">Contact Us</h6>
-                <span class="mb-2 foot-add foot-link"> Shop 6, 30 Dunrobin Ave, Kingston 10, (876)-755-3661
-                </span>
-                <img class="footer-map" src="http://d1z9ehtk9rps9k.cloudfront.net/logos/dunrobin.png">
-            </div>
-            <hr class="clearfix d-md-none">
+                        <li class="disabled">
+                            <a href="?p=1">Prev</a>
+                        </li>
 
+                        <li class="active">
+                            <a href="?p=1">1</a>
+                        </li>
+
+                        <li>
+                            <a href="?p=2">2</a>
+                        </li>
+
+                        <li>
+                            <a href="?p=3">3</a>
+                        </li>
+
+                        <li>
+                            <a href="?p=4">4</a>
+                        </li>
+
+                        <li>
+                            <a href="?p=2">Next</a>
+                        </li>
+
+                        <li>
+                            <a href="?p=4">Last</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <!-- Footer links -->
-        <hr>
-        <div class="row py-3 d-flex ">
-            <!--Grid column-->
-            <div class="copyright">
 
-                <!--Copyright-->
-                <p class="grey-text">©
-                    <script>document.write(new Date().getFullYear())</script> Copyright: Unique Living</p>
-                <!--/.Copyright-->
+    </div>
+</div>
+
+
+<div class="modal fade" id="enlargeImageModal" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal"
+     aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="enlargeName"></p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <img src="" class="enlargeImageModalSource" style="width: 75%;max-height:500px">
             </div>
         </div>
     </div>
-</footer>
+</div>
+<a id="back-to-top" href="#" class="btn btn-warning btn-sm back-to-top" role="button" title="" data-toggle="tooltip"
+   data-placement="left" data-original-title="" style="display: block;">
+    <i class="fal fa-arrow-circle-up"></i>Back-to-Top</a>
+</div>
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-
-  <script>
-    $(document).ready(function () {
-      $(window).scroll(function () {
-        if ($(this).scrollTop() > 50) {
-          $('#back-to-top').fadeIn();
-        } else {
-          $('#back-to-top').fadeOut();
-        }
-      });
-      // scroll body to 0px on click
-      $('#back-to-top').click(function () {
-        $('#back-to-top').tooltip('hide');
-        $('body,html').animate({
-          scrollTop: 0
-        }, 800);
-        return false;
-      });
-
-      $('#back-to-top').tooltip('show');
-
-    });
-  </script>
-
-  <script>
-    window.onload = function () {
-      const featured = new Vue({
-        el: '#featured',
-        data: {
-          products: [
-            {
-              "sku": "126151",
-              "category": "bathroom",
-              "finish": [
-                ""
-              ],
-              "name": " Sansa Vanity",
-              "Wholesale Price": "",
-              "brand": "ROYO",
-              "Price": "",
-              "status": "",
-              "addcategory": "",
-              "supcategory": "",
-              "image": "http://d1z9ehtk9rps9k.cloudfront.net/126151.jpg",
-              "subcategory": "vanities",
-              "url": "/category/bathroom/subcategory/vanities/126151"
-
-            },
-            {
-              "sku": "125450",
-              "category": "bathroom",
-              "finish": [
-                ""
-              ],
-              "name": "Onix Vanity",
-              "Wholesale Price": "",
-              "brand": "ROYO",
-              "Price": "",
-              "status": "",
-              "addcategory": "",
-              "supcategory": "",
-              "image": "http://d1z9ehtk9rps9k.cloudfront.net/125450.jpg",
-              "subcategory": "vanities",
-              "url": "/category/bathroom/subcategory/vanities/125450"
-            },
-            {
-              "sku": "33.300.02",
-              "category": "bathroom",
-              "finish": [
-                ""
-              ],
-              "name": "Delta Linear Drain",
-              "Wholesale Price": "",
-              "brand": "DELTA",
-              "Price": "",
-              "status": "",
-              "addcategory": "showers",
-              "supcategory": "shower-drains",
-              "image": "http://d1z9ehtk9rps9k.cloudfront.net/3330002.jpg",
-              "subcategory": "",
-              "url": "/category/bathroom/addcategory/showers/supcategory/shower-drains/33.300.02"
-            },
-            {
-              "sku": "WA0000",
-              "category": "commercial",
-              "finish": [
-                "white"
-              ],
-              "name": "VK-4008 soap or hand sanitizer dispenser",
-              "Wholesale Price": "",
-              "brand": "VIEANY",
-              "Price": "",
-              "status": "",
-              "addcategory": "",
-              "supcategory": "",
-              "image": "http://d1z9ehtk9rps9k.cloudfront.net/WA0000.jpg",
-              "subcategory": "soap-dispenser",
-              "url": "/category/commercial/WA0000"
-            },
-            {
-              "sku": "27630000",
-              "category": "bathroom",
-              "finish": [
-                "chrome"
-              ],
-              "name": "Croma E Showerpipe 280 1jet with thermostat",
-              "Wholesale Price": "",
-              "brand": "HANSGROHE",
-              "Price": "",
-              "status": "",
-              "addcategory": "",
-              "supcategory": "",
-              "image": "http://d1z9ehtk9rps9k.cloudfront.net/27630000.jpg",
-              "subcategory": "shower",
-              "url": "/category/bathroom/27630000"
-            },
-            {
-              "sku": "71133000",
-              "category": "bathroom",
-              "finish": [
-                "chrome"
-              ],
-              "name": "Logis 3-hole basin mixer",
-              "Wholesale Price": "",
-              "brand": "HANSGROHE",
-              "Price": "",
-              "status": "",
-              "addcategory": "",
-              "supcategory": "",
-              "image": "http://d1z9ehtk9rps9k.cloudfront.net/71133000.png",
-              "subcategory": "faucets",
-              "url": "/category/bathroom/71133000"
-            },
-
-          ]
-        },
-      })
-    }
-  </script>
-  <!-- {{!--  -->
-  
-  <script>
-    $(function () {
-      $('.prodimg').on('click', function () {
-        $('.enlargeImageModalSource').attr('src', $(this).attr('src'));
-        $('.enlargeName').attr('html', $(this).attr('data-productname'));
-        $('.enlargeName').text($(this).attr('data-productname'));
-        $('#enlargeImageModal').modal('show');
-      });
-    });
-  </script>
-  
-  <!-- --}} -->
-  <script type="text/javascript" src="/asset/smoothproducts.min.js"></script>
-  <script type="text/javascript">
-    /* wait for images to load */
-    $(window).load(function () {
-      $('.sp-wrap').smoothproducts();
-    });
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  </script>
-  <script src="https://fastcdn.org/Respond/1.4.2/respond.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr.js"></script> 
-  <!-- {{> constant_contact}} -->
-</body>
-<!-- {{> _footer}} -->
-
-</html>
+{% endblock %}
