@@ -1,0 +1,91 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+    <!-- single product start  -->
+    <div class="container products thetop">
+        <ol class="breadcrumb" itemtype="http://schema.org/BreadcrumbList">
+            <li class="breadcrumb-item" itemscope="" itemtype="http://schema.org/ListItem">
+                <a href="/category/bathroom" itemprop="url">
+                    <span class="breadcrumb-item" itemprop="title">Bathroom</span>
+                </a>
+            </li>
+            <li class="breadcrumb-item" itemscope="" itemtype="http://schema.org/ListItem">
+                <a href="/category/bathroom/subcategory/basin-faucets" itemprop="url">
+                    <span class="breadcrumb-item" itemprop="title">Basin-faucets</span>
+                </a>
+            </li>
+            <li class="breadcrumb-item" itemscope="" itemtype="http://schema.org/ListItem">
+                <span>T6172</span>
+            </li>
+        </ol>
+        <div class="col-md-12" id="list">
+            <div class="row prod-list" style="margin: 0px">
+
+                <div class="card col-sm-5">
+                    <div class="card-body">
+                        <div style="max-height: 300px; width: 300px;">
+                            <div class="sp-wrap sp-non-touch" style="display: inline-block;">
+
+                                <div class="sp-large">
+                                    <a id="clickme" class=".sp-current-big zoom" style="background-image: url(http://d1z9ehtk9rps9k.cloudfront.net/t6172.jpg)" onmousemove='zoom(event)'><img id="product_image" class="custom-zoom card-img-top prodpage-img" style="margin-left: auto;margin-right:auto;" src="http://d1z9ehtk9rps9k.cloudfront.net/t6172.jpg" alt="Glyde  4&quot; Basin Faucet "></a>
+                                    <!-- http://d1z9ehtk9rps9k.cloudfront.net/t6172.jpg -->
+                                </div>
+                            </div>
+
+                            <script>
+                                document.getElementById('product_image').addEventListener('click', () => {
+                                    console.log("opening");
+                                    document.getElementById('sp-lightbox').style.display = "block";
+                                })
+
+                                document.getElementById('sp-lightbox').addEventListener('click', () => {
+                                    console.log("closing");
+                                    document.getElementById('sp-lightbox').style.display = "none";
+                                })
+                            </script>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card col-sm-6" style="margin-left:auto; margin-right: 50px;">
+                    <div class="card-body" style="margin:auto 20px auto;">
+                        <div class="col-sm-10">
+                            <p>
+                                <span>
+                  <b>MOEN</b>
+                </span>
+                            </p>
+                            <p>Glyde 4" Basin Faucet </p>
+                        </div>
+                        <div class="col-sm-12">
+                            <p class="card-text price" style="font-size: 16px;">SKU: T6172</p>
+                            <ul style="list-style: none;width:200px; padding-left:0;" class="">
+                                <li style="display: inline-flex">
+                                    <p style="font-size: 16px;">Finish: </p>
+                                </li>
+                                <li style="display:inline;">
+                                    <img src="http://d1z9ehtk9rps9k.cloudfront.net/finish/chrome.png" style="width:25px;height:25px; border-radius: 25px; cursor: pointer;" alt="chrome" title="chrome">
+                                </li>
+                                <li style="display:inline;">
+                                    <img src="http://d1z9ehtk9rps9k.cloudfront.net/finish/brushed-nickel.png" style="width:25px;height:25px; border-radius: 25px; cursor: pointer;" alt="brushed-nickel" title="brushed-nickel">
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- single product end  -->
+
+
+{% endblock %}
