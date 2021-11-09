@@ -13,7 +13,7 @@ urlpatterns = [
     path("enclosure/", views.enclosure, name="enclosure"),
     path("hardware/", views.hardware, name="hardware"),
     path("no-search/", views.noSearch, name="no-search"),
-    path("search/", views.sarch, name="search"),
+    path("search/", views.search, name="search"),
     path("single-product/", views.singleProduct, name="single-product"),
 
 ]
