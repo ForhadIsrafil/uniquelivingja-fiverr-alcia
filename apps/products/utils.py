@@ -1,7 +1,5 @@
 import json
-
-from uniqueEcommerce import settings
-
+from django.conf import settings
 from .models import *
 from django.core.mail import EmailMessage
 
