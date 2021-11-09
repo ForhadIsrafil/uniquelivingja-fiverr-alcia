@@ -2,8 +2,109 @@
 
 {% load static %}
 
-{% block content %}
+{% block headblock %}
+ <style>
+        a.zoom {
+            box-shadow: 0 10px 40px 0 rgba(47, 47, 47, 0.1);
+            margin: 0 auto;
+            background-position: 50% 50%;
+            width: 298px;
+            height: 298px;
+            overflow: hidden;
+            cursor: zoom-in;
+        }
 
+        a.zoom img:hover {
+            opacity: 0;
+        }
+
+        a.zoom img {
+            transition: opacity 0.5s;
+            display: block;
+            width: inherit;
+        }
+
+        #sp-lightbox {
+            background: rgba(25, 25, 25, 0.959);
+            background-position: center;
+            background-size: cover;
+            position: fixed;
+            left: 0;
+            z-index: 1000;
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+
+        #sp-lightbox img {
+            position: absolute;
+            /* margin: 0 auto; */
+            left: 40%;
+            top: 20%;
+            height: 400px;
+            width: 400px;
+        }
+
+        @media (max-width: 1440px) {
+            #sp-lightbox img {
+                left: 40%;
+                top: 20%;
+                height: 400px;
+                width: 400px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            #sp-lightbox img {
+                left: 35%;
+                top: 20%;
+                height: 350px;
+                width: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #sp-lightbox img {
+                left: 30%;
+                top: 20%;
+                height: 300px;
+                width: 300px;
+            }
+        }
+
+        @media (max-width: 426px) {
+            #sp-lightbox img {
+                left: 15%;
+                top: 25%;
+                height: 300px;
+                width: 300px;
+            }
+        }
+
+        @media (max-width: 376px) {
+            #sp-lightbox img {
+                left: 10%;
+                top: 25%;
+                height: 300px;
+                width: 300px;
+            }
+        }
+
+        @media (max-width: 321px) {
+            #sp-lightbox img {
+                left: 10%;
+                top: 25%;
+                height: 300px;
+                width: 300px;
+            }
+        }
+    </style>
+{% endblock %}
+{% block content %}
 
     <!-- single product start  -->
     <div class="container products thetop">

@@ -20,6 +20,10 @@
 
     <title> Unique Living</title>
 
+
+    {% block headblock %}
+
+    {% endblock %}
     <link rel="icon" href="http://d1z9ehtk9rps9k.cloudfront.net/logos/uniquefavicon.png" type="image/png">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148378916-1"></script>
     <script>
@@ -44,6 +48,7 @@
 
 </head>
 <body>
+<div id="sp-lightbox"><img class="img img-thumbnail" src="http://d1z9ehtk9rps9k.cloudfront.net/t6172.jpg"></div>
 
 {% include 'header.html' %}
 {% block content %}
