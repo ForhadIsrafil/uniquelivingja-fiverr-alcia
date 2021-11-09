@@ -16,9 +16,16 @@ from django.utils import timezone
 
 
 def home(request):
-    return render(request, 'home.html')
+    # todo: product start (FEATRED PRODUCTS)
+    products = Product.objects.all().order_by('-id')
+    # todo: product end
 
+    # todo: sliders start
+    first_slider = HomeSlider.objects.all()[0]
+    sliders = HomeSlider.objects.all()[1:]
+    # todo: sliders end
 
+    return render(request, 'home.html', {'sliders': sliders, 'first_slider': first_slider, })
 
 
 def bathroom(request):
@@ -87,6 +94,7 @@ def search(request):
         return render(request, "store/store.html", context)
     else:
         return render(request, "store/nosearchresults.html")
+
 
 def about(request):
     return render(request, 'about.html')
