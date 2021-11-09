@@ -31,16 +31,24 @@ def bathroom(request):
     return render(request, 'bathroom.html')
 
 
-def closet(request):
+def ketchen(request):
+    return render(request, 'kitchen.html')
+
+
+def commercial(request):
+    return render(request, 'commercial.html')
+
+
+def hardware(request):
+    return render(request, 'hardware.html')
+
+
+def closets(request):
     return render(request, 'closet.html')
 
 
 def enclosure(request):
     return render(request, 'enclosure.html')
-
-
-def hardware(request):
-    return render(request, 'hardware.html')
 
 
 def noSearch(request):

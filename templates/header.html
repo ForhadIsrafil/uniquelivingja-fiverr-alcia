@@ -43,10 +43,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item  font-weight-bold">
-                        <a class="nav-link text-dark" href="/">Home </a>
+                        <a class="nav-link text-dark" href="/">Home</a>
                     </li>
                     <li class="nav-item dropdown font-weight-bold" style="box-sizing: border-box;">
-                        <a class="nav-link text-dark" href="/category/bathroom" role="button" aria-haspopup="true"
+                        <a class="nav-link text-dark" href="{% url 'bathroom' %}" role="button" aria-haspopup="true"
                            aria-expanded="false">Bathroom</a>
                         <div class="data-toggle=collapse navbar-expand-sm" style="box-sizing: border-box;">
                             <ul class="dropdown-menu">
@@ -184,7 +184,7 @@
                         <a class="nav-link text-dark" href="/enclosure">Shower Enclosures</a>
                     </li>
                     <li class="nav-item font-weight-bold">
-                        <a class="nav-link text-dark" href="/closet">Closets</a>
+                        <a class="nav-link text-dark" href="/closets">Closets</a>
                     </li>
                     <li class="nav-item font-weight-bold">
                         <a class="nav-link text-dark" href="/about">About Us</a>
@@ -193,7 +193,7 @@
                         <a class="nav-link text-dark" href="/contact">Contact Us</a>
                     </li>
                     <li class="nav-item font-weight-bold">
-                        <a class="nav-link text-dark" href="{% url 'login' %}">login</a>
+                        <a class="nav-link text-dark" href="/login">Login</a>
                     </li>
                 </ul>
 
