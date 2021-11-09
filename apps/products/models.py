@@ -25,9 +25,9 @@ class Product(models.Model):
     brand = models.CharField(max_length=200, null=True)
     name = models.CharField(max_length=200, null=True)
     sku = models.CharField(max_length=200, null=True, blank=True)
-    description = models.TextField(null=True, blank=True)
+    # description = models.TextField(null=True, blank=True)
     price = models.FloatField(null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(upload_to='product_images',null=True, blank=True)
     finishes = models.CharField(max_length=200, null=True, blank=True)
     # featured = models.BooleanField(default=False) will added if needed
     main_category = models.CharField(choices=MAIN_CATEGORY_CHOICES, default=MAIN_CATEGORY_CHOICES[0], max_length=200,
