@@ -19,19 +19,13 @@ def home(request):
     return render(request, 'home.html')
 
 
-def about(request):
-    return render(request, 'about.html')
-
-
-def contact(request):
-    return render(request, 'contact.html')
 
 
 def bathroom(request):
     return render(request, 'bathroom.html')
 
 
-def ketchen(request):
+def kitchen(request):
     return render(request, 'kitchen.html')
 
 
@@ -93,3 +87,10 @@ def search(request):
         return render(request, "store/store.html", context)
     else:
         return render(request, "store/nosearchresults.html")
+
+def about(request):
+    return render(request, 'about.html')
+
+
+def contact(request):
+    return render(request, 'contact.html')

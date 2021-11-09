@@ -43,7 +43,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item  font-weight-bold">
-                        <a class="nav-link text-dark" href="/">Home</a>
+                        <a class="nav-link text-dark" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item dropdown font-weight-bold" style="box-sizing: border-box;">
                         <a class="nav-link text-dark" href="{% url 'bathroom' %}" role="button" aria-haspopup="true"
@@ -93,7 +93,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown font-weight-bold" style="box-sizing: border-box;">
-                        <a class="nav-link text-dark" href="/category/kitchen" role="button" aria-haspopup="true"
+                        <a class="nav-link text-dark" href="{% url 'kitchen' %}" role="button" aria-haspopup="true"
                            aria-expanded="false">Kitchen</a>
                         <ul class="dropdown-menu">
                             <li class="list-group horizontal">
@@ -113,7 +113,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown font-weight-bold">
-                        <a class="nav-link text-dark" href="/category/commercial" role="button" aria-haspopup="true"
+                        <a class="nav-link text-dark" href="{% url 'commercial' %}" role="button" aria-haspopup="true"
                            aria-expanded="false">Commercial</a>
                         <ul class="dropdown-menu">
                             <li class="list-group horizontal">
@@ -147,7 +147,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown font-weight-bold" style="box-sizing: border-box;">
-                        <a class="nav-link text-dark" href="/category/hardware" role="button" aria-haspopup="true"
+                        <a class="nav-link text-dark" href="{% url 'hardware' %}" role="button" aria-haspopup="true"
                            aria-expanded="false">Hardware</a>
                         <ul class="dropdown-menu">
                             <li class="list-group horizontal">
@@ -181,19 +181,19 @@
                         </ul>
                     </li>
                     <li class="nav-item font-weight-bold">
-                        <a class="nav-link text-dark" href="/enclosure">Shower Enclosures</a>
+                        <a class="nav-link text-dark" href="{% url 'enclosure' %}">Shower Enclosures</a>
                     </li>
                     <li class="nav-item font-weight-bold">
-                        <a class="nav-link text-dark" href="/closets">Closets</a>
+                        <a class="nav-link text-dark" href="{% url 'closets' %}">Closets</a>
                     </li>
                     <li class="nav-item font-weight-bold">
-                        <a class="nav-link text-dark" href="/about">About Us</a>
+                        <a class="nav-link text-dark" href="{% url 'about' %}">About Us</a>
                     </li>
                     <li class="nav-item font-weight-bold">
-                        <a class="nav-link text-dark" href="/contact">Contact Us</a>
+                        <a class="nav-link text-dark" href="{% url 'contact' %}">Contact Us</a>
                     </li>
                     <li class="nav-item font-weight-bold">
-                        <a class="nav-link text-dark" href="/login">Login</a>
+                        <a class="nav-link text-dark" href="{% url 'login' %}">Login</a>
                     </li>
                 </ul>
 
