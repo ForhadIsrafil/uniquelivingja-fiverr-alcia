@@ -15,6 +15,46 @@ from django.template import RequestContext
 from django.utils import timezone
 
 
+def home(request):
+    return render(request, 'home.html')
+
+
+def about(request):
+    return render(request, 'about.html')
+
+
+def contact(request):
+    return render(request, 'contact.html')
+
+
+def bathroom(request):
+    return render(request, 'bathroom.html')
+
+
+def closet(request):
+    return render(request, 'closet.html')
+
+
+def enclosure(request):
+    return render(request, 'enclosure.html')
+
+
+def hardware(request):
+    return render(request, 'hardware.html')
+
+
+def noSearch(request):
+    return render(request, 'no-search-result.html')
+
+
+def search(request):
+    return render(request, 'search.html')
+
+
+def singleProduct(request):
+    return render(request, 'singleProduct.html')
+
+
 def search(request):
     data = cartData(request)
     cartItems = data["cartItems"]
