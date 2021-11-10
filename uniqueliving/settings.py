@@ -142,16 +142,17 @@ STATICFILES_DIRS = (
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 # todo: email settings start
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = env("EMAIL_HOST", default="")
-EMAIL_USE_TLS = env("EMAIL_USE_TLS", default=True)
-# EMAIL_USE_SSL = env("EMAIL_USE_SSL", default=True)
-EMAIL_PORT = env("EMAIL_PORT", default=465)
-EMAIL_HOST_USER = env("EMAIL_HOST_USER", default="")
-EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD", default="")
-DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", default="")
-INTERNAL_EMAIL = env('INTERNAL_EMAIL', default="")
-EMAIL_TIMEOUT = 30
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_HOST = env.str("EMAIL_HOST", default="")
+EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS", default=False)
+EMAIL_USE_SSL = env.bool("EMAIL_USE_SSL", default=True)
+EMAIL_PORT = env.int("EMAIL_PORT", default=465)
+EMAIL_HOST_USER = env.str("EMAIL_HOST_USER", default="")
+EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD", default="")
+DEFAULT_FROM_EMAIL = env.str("DEFAULT_FROM_EMAIL", default="")
+INTERNAL_EMAIL = env.str('INTERNAL_EMAIL', default="")
+EMAIL_TIMEOUT = 50
 
 # todo: email settings end
 

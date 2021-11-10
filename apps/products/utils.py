@@ -3,6 +3,7 @@ from django.conf import settings
 from .models import *
 from django.core.mail import EmailMessage, send_mail
 
+
 def cookieCart(request):
     # Create empty cart for now for non-logged in user
     try:
@@ -184,6 +185,9 @@ def send_contact_email(request):
                                                                                request.POST.get('message'),
                                                                                request.POST.get('email'))
     try:
+        # send_mail(subject=request.POST.get('subject'), message=message, from_email=settings.DEFAULT_FROM_EMAIL,
+        #           recipient_list=[settings.INTERNAL_EMAIL], auth_user=settings.EMAIL_HOST_USER,
+        #           auth_password=settings.EMAIL_HOST_PASSWORD)
         email = EmailMessage(subject=request.POST.get('subject'), body=message, to=[settings.INTERNAL_EMAIL])
         email.send()
         return True
