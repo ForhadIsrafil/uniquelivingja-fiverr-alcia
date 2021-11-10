@@ -4,7 +4,7 @@ from django.core.paginator import Paginator
 import json
 import datetime
 from .models import *
-from .utils import cookieCart, cartData, get_query, get_or_create_customer, send_order_email
+from .utils import cookieCart, cartData, get_query, get_or_create_customer, send_contact_email
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -100,5 +100,22 @@ def about(request):
     return render(request, 'about.html')
 
 
+from django.contrib import messages
+
+
 def contact(request):
+    if request.POST:
+        send_contact = send_contact_email(request)
+        if send_contact:
+            messages.error(
+                request,
+                "Thanks for your message. We will contact with sortly.",
+            )
+            return render(request, 'contact.html')
+        else:
+            messages.error(
+                request,
+                "Something wrong. please try again.",
+            )
+            return render(request, 'contact.html')
     return render(request, 'contact.html')

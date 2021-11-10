@@ -1,8 +1,7 @@
 import json
 from django.conf import settings
 from .models import *
-from django.core.mail import EmailMessage
-
+from django.core.mail import EmailMessage, send_mail
 
 def cookieCart(request):
     # Create empty cart for now for non-logged in user
@@ -72,10 +71,13 @@ def cartData(request):
 
     return {"cartItems": cartItems, "order": order, "items": items}
 
+
 def get_cart_total(self):
     orderitems = self.orderitem_set.all()
     total = sum([item.get_total for item in orderitems])
     return float(format(total, ".2f"))
+
+
 # def guestOrder(request, data):
 #     customer_name = data["form"]["customer_name"]
 #     email = data["form"]["email"]
@@ -176,20 +178,15 @@ def get_or_create_customer(request, data):
     return customer
 
 
-def send_order_email():
-    mail_subject = "Order confirmations."
-    # message = render_to_string(
-    #     self.activation_email_template,
-    #     {
-    #         "user": user,
-    #         "domain": current_site.domain,
-    #         "uid": urlsafe_base64_encode(force_bytes(user.id)),
-    #         "token": account_activation_token.make_token(user),
-    #     },
-    # )
-    message = 'the order is submitted!'
+def send_contact_email(request):
+    # mail_subject = "New contact from client."
+    message = 'New contact from client: {0}.\nMessage: {1}\nEmail: {2}'.format(request.POST.get('name'),
+                                                                               request.POST.get('message'),
+                                                                               request.POST.get('email'))
     try:
-        email = EmailMessage(subject=mail_subject, body=message, to=[settings.INTERNAL_EMAIL])
+        email = EmailMessage(subject=request.POST.get('subject'), body=message, to=[settings.INTERNAL_EMAIL])
         email.send()
+        return True
     except Exception as e:
         print(e)
+        return False
